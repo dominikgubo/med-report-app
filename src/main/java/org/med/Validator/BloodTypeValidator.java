@@ -11,7 +11,7 @@ public final class BloodTypeValidator implements ConstraintValidator<ValidBloodT
     Predicate<String> ABCondition = s -> "AB".equals(s.substring(0, 2)) && s.length() == 3 && checkOperator(s);
     Predicate<String> shortGroupCondition = s -> letterBloodGroups.contains(s.substring(0, 1)) && s.length() == 2 && checkOperator(s);
 
-    //TODO; might change the approach logic to regex matching
+    //TODO; might change the approach logic to full combination list or regex matching
     @Override
     public boolean isValid(String bloodType, ConstraintValidatorContext constraintValidatorContext) {
         // As it's not mandatory
