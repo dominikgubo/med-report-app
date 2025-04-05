@@ -1,6 +1,7 @@
-package org.acme.Validator;
+package org.med.Validator;
 
 import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -11,5 +12,9 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD})
 @Constraint(validatedBy = BloodTypeValidator.class)
 public @interface ValidBloodType {
+    String message() default "Invalid value";
 
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
 }

@@ -1,3 +1,3 @@
-package org.acme.Model;
+package org.med.Model;
 
 public record MedicalParameter(String paramName, String paramValue) {}

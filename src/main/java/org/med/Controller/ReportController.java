@@ -1,12 +1,12 @@
-package org.acme.Controller;
+package org.med.Controller;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import org.acme.Entity.ReportEntity;
-import org.acme.Service.ReportService;
+import org.med.Entity.ReportEntity;
+import org.med.Service.ReportService;
 
 import java.util.List;
 

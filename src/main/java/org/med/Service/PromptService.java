@@ -1,9 +1,9 @@
-package org.acme.Service;
+package org.med.Service;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import org.acme.Entity.PromptEntity;
-import org.acme.Repository.PromptRepository;
+import org.med.Entity.PromptEntity;
+import org.med.Repository.PromptRepository;
 
 import java.util.List;
 

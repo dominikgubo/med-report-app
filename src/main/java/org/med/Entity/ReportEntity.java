@@ -1,20 +1,17 @@
-package org.acme.Entity;
+package org.med.Entity;
 
 import io.smallrye.common.constraint.NotNull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.acme.Validator.ValidBloodType;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class PatientEntity {
+@Table(name = "report")
+public class ReportEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,11 +19,12 @@ public class PatientEntity {
     private String firstName;
     @NotNull
     private String lastName;
-    @ValidBloodType
-    private String bloodType;
-    @NotNull
-    private String sex;
+    private enum sex {
+        MALE,
+        FEMALE
+    };
     @NotNull
     private int age;
-    private float weight;
+    @OneToOne
+    private ReportDataEntity data;
 }

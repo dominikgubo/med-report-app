@@ -1,4 +1,4 @@
-package org.acme.Entity;
+package org.med.Entity;
 
 import io.smallrye.common.constraint.NotNull;
 import jakarta.persistence.*;

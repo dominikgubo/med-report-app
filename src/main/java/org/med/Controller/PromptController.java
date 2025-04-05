@@ -1,10 +1,10 @@
-package org.acme.Controller;
+package org.med.Controller;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
-import org.acme.Entity.PromptEntity;
-import org.acme.Service.PromptService;
+import org.med.Entity.PromptEntity;
+import org.med.Service.PromptService;
 
 import java.util.List;
 

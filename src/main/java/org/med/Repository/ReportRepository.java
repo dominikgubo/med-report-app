@@ -1,8 +1,8 @@
-package org.acme.Repository;
+package org.med.Repository;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
-import org.acme.Entity.ReportEntity;
+import org.med.Entity.ReportEntity;
 @ApplicationScoped
 public class ReportRepository implements PanacheRepository<ReportEntity> {
     public ReportEntity findByFirstName(String firstName){

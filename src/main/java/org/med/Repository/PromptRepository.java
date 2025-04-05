@@ -1,8 +1,8 @@
-package org.acme.Repository;
+package org.med.Repository;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
-import org.acme.Entity.PromptEntity;
+import org.med.Entity.PromptEntity;
 
 @ApplicationScoped
 public class PromptRepository implements PanacheRepository {

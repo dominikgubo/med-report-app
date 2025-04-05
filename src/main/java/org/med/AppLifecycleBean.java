@@ -1,4 +1,4 @@
-package org.acme;
+package org.med;
 
 import io.quarkus.runtime.ShutdownEvent;
 import io.quarkus.runtime.StartupEvent;
