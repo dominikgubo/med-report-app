@@ -9,13 +9,13 @@ import org.med.Repository.PatientRepository;
 import java.util.List;
 
 @ApplicationScoped
+@Transactional
 public class PatientService {
     private final PatientRepository patientRepository;
     @Inject
     public PatientService(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
-    @Transactional
     public void createPatient(PatientEntity patient){
         patientRepository.persist(patient);
     }

@@ -1,4 +1,4 @@
-package org.med.ValidatorTest;
+package org.med.Validator;
 
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
@@ -10,9 +10,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.med.Entity.PatientEntity;
 import org.med.Service.PatientService;
-import org.testcontainers.containers.PostgreSQLContainer;
 
 import java.util.List;
+
+import static org.med.Utils.TestContainerSetup.startTestContainer;
+import static org.med.Utils.TestContainerSetup.stopTestContainer;
 
 @QuarkusTest
 public class ValidBloodTypeValidatorTest {
@@ -20,18 +22,15 @@ public class ValidBloodTypeValidatorTest {
     @Inject
     private PatientService patientService;
 
-    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine")
-            .withPassword("root")
-            .withUsername("root");
 
     @BeforeAll
     static void beforeAll() {
-        postgres.start();
+        startTestContainer();
     }
 
     @AfterAll
     static void afterAll() {
-        postgres.stop();
+        stopTestContainer();
     }
 
     @Test
