@@ -8,21 +8,22 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import net.sf.jasperreports.engine.JRException;
 import org.med.Entity.ReportEntity;
-import org.med.Repository.MedicalParameterRepository;
-import org.med.Service.PatientService;
+import org.med.Service.JaspersoftService;
 import org.med.Service.ReportService;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 @Path("/report")
 public class ReportController {
     @Inject
     ReportService reportService;
+
     @Inject
-    PatientService patientService;
-    @Inject
-    MedicalParameterRepository medicalParameterRepository;
+    JaspersoftService jaspersoftService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -39,5 +40,14 @@ public class ReportController {
         } catch (HttpException e){
             Log.errorv("Report creation not successful; {0}", e);
         }
+    }
+
+    @POST
+    @Path("/generatePdf")
+    public void generateJaspersoftReportPdf() throws JRException, IOException {
+        // TODO; shift logic arrange project structure
+        HashMap<String, Object> testHashMap = new HashMap<>();
+        testHashMap.put("reportType", "Blood examination");
+        jaspersoftService.generatePdfReport(testHashMap);
     }
 }
