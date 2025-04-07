@@ -72,6 +72,11 @@
             <version>1.19.8</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>7.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
