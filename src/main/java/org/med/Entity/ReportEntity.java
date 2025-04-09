@@ -21,6 +21,7 @@ public class ReportEntity {
     private Long id;
     @NotNull
     @ManyToOne
+    @JoinColumn(name = "patient_id")
     private PatientEntity patient;
     @OneToMany(fetch = FetchType.EAGER)
     private List<MedicalParameterEntity> medicalParameterList;
