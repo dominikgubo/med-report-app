@@ -1,0 +1,51 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="Basic_report" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1f690a3-5977-4467-85f8-6b0bcd5b7210">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="26.0" bold="true"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18.0"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12.0" bold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12.0"/>
+    <parameter name="reportType" class="java.lang.String"/>
+    <query language="sql"><![CDATA[]]></query>
+    <background splitType="Stretch"/>
+    <title height="70" splitType="Stretch">
+        <element kind="staticText" uuid="6f9c1004-6140-4588-9c4f-d75824835765" x="0" y="13" width="263" height="33" vTextAlign="Middle" style="Title">
+            <text><![CDATA[Medical Report]]></text>
+        </element>
+        <element kind="textField" uuid="21c39d7a-3ae0-458d-9455-4aba3c44a13d" x="80" y="50" width="180" height="20" fontSize="14.0">
+            <expression><![CDATA[$P{reportType}]]></expression>
+        </element>
+    </title>
+    <pageHeader splitType="Stretch"/>
+    <columnHeader height="36" splitType="Stretch">
+        <element kind="line" uuid="544e89f7-0fd1-4142-aa23-e335e3be7007" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+    </columnHeader>
+    <detail>
+        <band height="16" splitType="Stretch">
+            <element kind="line" uuid="cb229859-ab9a-4aa3-afa2-84439642f4ee" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1">
+                <pen lineWidth="0.5" lineColor="#999999"/>
+            </element>
+        </band>
+    </detail>
+    <columnFooter height="45" splitType="Stretch">
+        <element kind="line" uuid="401e0e59-de38-4dd2-8257-418cb489177c" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+    </columnFooter>
+    <pageFooter height="20" splitType="Stretch">
+        <element kind="textField" uuid="deb23d85-47bb-4de6-978e-113ff117188c" x="433" y="0" width="80" height="20" fontSize="10.0" bold="false" hTextAlign="Right" style="Column header">
+            <expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+        </element>
+        <element kind="textField" uuid="c6ce76ba-6e11-41e2-9415-72dc2eff001b" x="513" y="0" width="40" height="20" fontSize="10.0" evaluationTime="Report" bold="false" style="Column header">
+            <expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+        </element>
+        <element kind="textField" uuid="5a79d2a0-bcde-4ad5-adf0-c4eb2066f6dd" x="0" y="0" width="197" height="20" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" style="Column header">
+            <expression><![CDATA[new java.util.Date()]]></expression>
+        </element>
+    </pageFooter>
+    <summary splitType="Stretch"/>
+</jasperReport>
