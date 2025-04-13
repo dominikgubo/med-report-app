@@ -42,6 +42,9 @@ public class ReportServiceTest {
                 .firstName("Slavko")
                 .lastName("Kockica")
                 .bloodType("A+")
+                .sex('M')
+                .weight(70)
+                .age(48)
                 .build();
 
         patientService.createPatient(patientEntity);
