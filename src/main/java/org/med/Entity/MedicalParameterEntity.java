@@ -19,7 +19,7 @@ public class MedicalParameterEntity {
     private String parameterName;
     @ManyToOne
     @JoinColumn(name = "report_id")
-    @NotNull @NotEmpty
+    @NotNull
     private ReportEntity reportId;
     @NotNull @NotEmpty
     private String parameterValue;

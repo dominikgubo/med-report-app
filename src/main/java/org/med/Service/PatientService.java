@@ -16,12 +16,14 @@ public class PatientService {
     public PatientService(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
-    public void createPatient(PatientEntity patient){
+    public void create(PatientEntity patient){
         patientRepository.persist(patient);
     }
-
-
-     public List<PatientEntity> getAllPatients(){
+    public List<PatientEntity> getAll(){
         return patientRepository.findAll().list();
+    }
+
+    public void deleteAll() {
+        patientRepository.deleteAll();
     }
 }

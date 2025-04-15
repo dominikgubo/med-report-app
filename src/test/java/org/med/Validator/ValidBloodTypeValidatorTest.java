@@ -1,42 +1,37 @@
 package org.med.Validator;
 
+import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import jakarta.validation.ValidationException;
 import jdk.jfr.Description;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.med.Entity.PatientEntity;
 import org.med.Service.PatientService;
+import org.med.Utils.DBCleanUtil;
+import org.med.Utils.DBTestContainerSetup;
 
 import java.util.List;
 
-import static org.med.Utils.TestContainerSetup.startTestContainer;
-import static org.med.Utils.TestContainerSetup.stopTestContainer;
-
 @QuarkusTest
+@QuarkusTestResource(DBTestContainerSetup.class)
 public class ValidBloodTypeValidatorTest {
 
     @Inject
     private PatientService patientService;
+    @Inject
+    DBCleanUtil dbCleanUtil;
 
-
-    @BeforeAll
-    static void beforeAll() {
-        startTestContainer();
-    }
-
-    @AfterAll
-    static void afterAll() {
-        stopTestContainer();
+    @BeforeEach
+    public void cleanDB(){
+        dbCleanUtil.cleanDB();
     }
 
     @Test
     @Description("Happy path: Valid patient blood types")
     public void testValidBloodTypesPatientInsertion() {
-
         PatientEntity patientWithBloodGroupA = PatientEntity.builder()
                 .firstName("Arthur")
                 .lastName("Doe")
@@ -54,11 +49,11 @@ public class ValidBloodTypeValidatorTest {
                 .lastName("Sak")
                 .build();
 
-        patientService.createPatient(patientWithBloodGroupA);
-        patientService.createPatient(patientWithBloodGroupAB);
-        patientService.createPatient(noBloodGroupPatient);
+        patientService.create(patientWithBloodGroupA);
+        patientService.create(patientWithBloodGroupAB);
+        patientService.create(noBloodGroupPatient);
 
-        List<PatientEntity> patientList = patientService.getAllPatients();
+        List<PatientEntity> patientList = patientService.getAll();
         Assertions.assertEquals(3, patientList.size());
     }
 
@@ -73,7 +68,7 @@ public class ValidBloodTypeValidatorTest {
 
 
         Assertions.assertThrows(ValidationException.class, () -> {
-            patientService.createPatient(patientWithInvalidBloodGroup1);
+            patientService.create(patientWithInvalidBloodGroup1);
         });
 
         PatientEntity patientWithInvalidBloodGroup2 = PatientEntity.builder()
@@ -83,9 +78,9 @@ public class ValidBloodTypeValidatorTest {
                 .build();
 
         Assertions.assertThrows(ValidationException.class, () -> {
-            patientService.createPatient(patientWithInvalidBloodGroup2);
+            patientService.create(patientWithInvalidBloodGroup2);
         });
 
-        Assertions.assertEquals(0, patientService.getAllPatients().size());
+        Assertions.assertEquals(0, patientService.getAll().size());
     }
 }

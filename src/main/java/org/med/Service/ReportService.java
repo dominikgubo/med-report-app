@@ -14,12 +14,20 @@ public class ReportService {
     @Inject
     ReportRepository reportRepository;
 
-    public ReportEntity findByFirstName(String firstName){
+    public ReportEntity findByFirstName(String firstName) {
         return reportRepository.findByPatientFirstName(firstName);
     }
-    public List<ReportEntity> findAll(){
+
+    public List<ReportEntity> findAll() {
         return reportRepository.findAll().list();
     }
-    public void createReport(ReportEntity entity){ reportRepository.persist(entity); }
+
+    public void create(ReportEntity entity) {
+        reportRepository.persist(entity);
+    }
+
+    public void deleteAll() {
+        reportRepository.deleteAll();
+    }
 
 }

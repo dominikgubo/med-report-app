@@ -1,23 +1,22 @@
 package org.med.Service;
 
+import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import jdk.jfr.Description;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.med.Entity.MedicalParameterEntity;
 import org.med.Entity.PatientEntity;
 import org.med.Entity.ReportEntity;
 import org.med.Repository.MedicalParameterRepository;
+import org.med.Utils.DBCleanUtil;
+import org.med.Utils.DBTestContainerSetup;
 
 import java.util.Collections;
-
-import static org.med.Utils.TestContainerSetup.startTestContainer;
-import static org.med.Utils.TestContainerSetup.stopTestContainer;
-
 @QuarkusTest
+@QuarkusTestResource(DBTestContainerSetup.class)
 public class ReportServiceTest {
     @Inject
     ReportService reportService;
@@ -25,14 +24,12 @@ public class ReportServiceTest {
     MedicalParameterRepository medicalParameterRepository;
     @Inject
     PatientService patientService;
+    @Inject
+    DBCleanUtil dbCleanUtil;
 
-    @BeforeAll
-    public static void beforeAll(){
-        startTestContainer();
-    }
-    @AfterAll
-    public static void afterAll(){
-        stopTestContainer();
+    @BeforeEach
+    public void cleanDB(){
+        dbCleanUtil.cleanDB();
     }
 
     @Test
@@ -44,7 +41,7 @@ public class ReportServiceTest {
                 .bloodType("A+")
                 .build();
 
-        patientService.createPatient(patientEntity);
+        patientService.create(patientEntity);
 
 
         MedicalParameterEntity parameter = MedicalParameterEntity.builder()
@@ -59,7 +56,7 @@ public class ReportServiceTest {
                 .medicalParameterList(Collections.singletonList(parameter))
                 .build();
 
-        reportService.createReport(reportEntity);
+        reportService.create(reportEntity);
         Assertions.assertEquals(1, reportService.findAll().size());
 
         ReportEntity report = reportService.findByFirstName("Slavko");
