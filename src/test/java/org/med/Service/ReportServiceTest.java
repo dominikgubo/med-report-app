@@ -14,8 +14,8 @@ import org.med.Repository.MedicalParameterRepository;
 
 import java.util.Collections;
 
-import static org.med.Utils.TestContainerSetup.startTestContainer;
-import static org.med.Utils.TestContainerSetup.stopTestContainer;
+import static org.med.Utils.DBTestContainerSetup.startTestContainer;
+import static org.med.Utils.DBTestContainerSetup.stopTestContainer;
 
 @QuarkusTest
 public class ReportServiceTest {

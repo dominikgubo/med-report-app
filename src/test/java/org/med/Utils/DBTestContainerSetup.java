@@ -2,7 +2,7 @@ package org.med.Utils;
 
 import org.testcontainers.containers.PostgreSQLContainer;
 
-public class TestContainerSetup {
+public class DBTestContainerSetup {
     private static final PostgreSQLContainer<?> postgresContainer = new PostgreSQLContainer<>("postgres:16-alpine")
             .withPassword("root")
             .withUsername("root");
