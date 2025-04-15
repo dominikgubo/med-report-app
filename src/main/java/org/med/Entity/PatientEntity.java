@@ -2,7 +2,6 @@ package org.med.Entity;
 
 import io.smallrye.common.constraint.NotNull;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,9 +25,9 @@ public class PatientEntity {
     @ValidBloodType
     private String bloodType;
     @NotNull
-    private char sex;
+    private Character sex;
     @NotNull
-    private int age;
+    private Integer age;
 
-    private float weight;
+    private Float weight;
 }

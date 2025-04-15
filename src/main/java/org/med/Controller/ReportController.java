@@ -36,7 +36,7 @@ public class ReportController {
     @Path("/create")
     public void createReport(ReportEntity report){
         try {
-            reportService.createReport(report);
+            reportService.create(report);
         } catch (HttpException e){
             Log.errorv("Report creation not successful; {0}", e);
         }

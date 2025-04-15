@@ -1,15 +1,29 @@
 package org.med.Utils;
 
+import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 import org.testcontainers.containers.PostgreSQLContainer;
 
-public class DBTestContainerSetup {
-    private static final PostgreSQLContainer<?> postgresContainer = new PostgreSQLContainer<>("postgres:16-alpine")
-            .withPassword("root")
-            .withUsername("root");
-    public static void startTestContainer(){
-        postgresContainer.start();
+import java.util.HashMap;
+import java.util.Map;
+public class DBTestContainerSetup implements QuarkusTestResourceLifecycleManager {
+    PostgreSQLContainer postgreSQLContainer;
+
+    @Override
+    public Map<String, String> start() {
+        this.postgreSQLContainer = new PostgreSQLContainer<>("postgres:16-alpine");
+        postgreSQLContainer.start();
+
+        Map<String, String> config = new HashMap<>();
+        config.put("quarkus.datasource.jdbc.url", postgreSQLContainer.getJdbcUrl());
+        config.put("quarkus.datasource.username", postgreSQLContainer.getUsername());
+        config.put("quarkus.datasource.password", postgreSQLContainer.getPassword());
+        return config;
     }
-    public static void stopTestContainer(){
-        postgresContainer.close();
+
+    @Override
+    public void stop() {
+        if(this.postgreSQLContainer.isRunning()){
+            this.postgreSQLContainer.stop();
+        }
     }
 }
