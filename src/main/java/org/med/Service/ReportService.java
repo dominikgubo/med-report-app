@@ -14,8 +14,12 @@ public class ReportService {
     @Inject
     ReportRepository reportRepository;
 
-    public ReportEntity findByFirstName(String firstName) {
+    public List<ReportEntity> findByFirstName(String firstName) {
         return reportRepository.findByPatientFirstName(firstName);
+    }
+
+    public ReportEntity findById(Long id) {
+        return reportRepository.findById(id);
     }
 
     public List<ReportEntity> findAll() {

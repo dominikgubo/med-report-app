@@ -16,6 +16,7 @@ import java.util.List;
 @Builder
 @Table(name = "report")
 public class ReportEntity {
+    //TODO; reportType attribute much needed, need to add it
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -59,7 +59,7 @@ public class ReportServiceTest {
         reportService.create(reportEntity);
         Assertions.assertEquals(1, reportService.findAll().size());
 
-        ReportEntity report = reportService.findByFirstName("Slavko");
+        ReportEntity report = reportService.findByFirstName("Slavko").get(0);
         Assertions.assertNotNull(report);
 
         String bloodPressureValue = report.getMedicalParameterList().get(0).getParameterValue();
