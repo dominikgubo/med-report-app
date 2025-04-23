@@ -20,7 +20,7 @@ public class JaspersoftService {
     @Inject
     AgroalDataSource dataSource;
     //TODO; check relative pathing & change folder structure
-    private final String REPORT_TEMPLATE_PATH = "reportTemplates/initialSQLTemplate.jrxml";
+    private final String REPORT_TEMPLATE_PATH = "reportTemplates/initialBloodReportSQL.jrxml";
     private String REPORT_GENERATION_DIRECTORY_PATH = "generatedJasperReports/";
 
     //TODO; add mapping layer for reportDataset or investigate another approach
