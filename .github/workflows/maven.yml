@@ -4,7 +4,6 @@ on:
     branches: [ "develop" ]
   pull_request:
     branches: [ "develop" ]
-
 permissions:
   contents: write
   dependencies: write
