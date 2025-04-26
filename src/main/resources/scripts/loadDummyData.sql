@@ -8,6 +8,7 @@ INSERT INTO prompt (description, promptvalue) VALUES ('Test prompt3', 'Describe 
 -- Patient dummy data
 ALTER TABLE patient ALTER COLUMN weight DROP NOT NULL;
 INSERT INTO patient(firstName, lastName, bloodType, sex, age) VALUES ('John', 'Doe', 'A+', 'M', 45);
+INSERT INTO patient(firstName, lastName, bloodType, sex, age) VALUES ('Slavko', 'Kockica', 'B+', 'M', 22);
 
 -- Report data dummy
 INSERT INTO report (patient, reportType) values (1, 'Blood');

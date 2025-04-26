@@ -38,6 +38,7 @@ public class PdfReportService {
         HashMap<String, Object> parameterMap = new HashMap<>();
         parameterMap.put("reportType", reportType);
         parameterMap.put("promptResponse", aiResponse);
+        parameterMap.put("reportId", reportId);
         jaspersoftService.generatePdfReport(parameterMap);
     }
 
