@@ -18,8 +18,8 @@ public class DBCleanUtil {
     private PromptService promptService;
 
     public void cleanDB() {
-        reportService.deleteAll();
         medicalParameterService.deleteAll();
+        reportService.deleteAll();
         patientService.deleteAll();
         promptService.deleteAll();
     }
