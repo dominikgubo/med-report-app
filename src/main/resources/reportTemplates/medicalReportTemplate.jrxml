@@ -174,8 +174,8 @@ WHERE report = $P{reportId}]]></query>
             </element>
             <property name="com.jaspersoft.studio.unit.height" value="px"/>
         </band>
-        <band height="64">
-            <element kind="component" uuid="7c9aeda6-a3be-4362-a9ba-21596c3eb495" x="0" y="0" width="555" height="40">
+        <band height="73">
+            <element kind="component" uuid="7c9aeda6-a3be-4362-a9ba-21596c3eb495" x="0" y="0" width="555" height="40" printInFirstWholeBand="true" printRepeatedValues="false">
                 <component kind="table">
                     <datasetRun uuid="8274024e-9ca3-44e0-9bb6-0fd750a942be" subDataset="Report Medical Parameter Dataset">
                         <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
@@ -201,8 +201,21 @@ WHERE report = $P{reportId}]]></query>
                         <detailCell height="24" style="Table_TD">
                             <element kind="textField" uuid="f74d5257-6e81-4ba4-aef2-7f6f4af24ec7" x="0" y="0" width="185" height="24" fontName="Times New Roman" hTextAlign="Center" vTextAlign="Middle">
                                 <expression><![CDATA[$F{parametername}]]></expression>
+                                <box>
+                                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                                    <bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+                                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                                </box>
                             </element>
                             <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                            <box style="Table_TD">
+                                <pen lineColor="#030303"/>
+                                <topPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
+                                <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#030303"/>
+                                <bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
+                                <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#030303"/>
+                            </box>
                         </detailCell>
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
                     </column>
@@ -214,11 +227,18 @@ WHERE report = $P{reportId}]]></query>
                             <property name="com.jaspersoft.studio.unit.width" value="px"/>
                         </tableHeader>
                         <detailCell height="24" style="Table_TD">
-                            <element kind="textField" uuid="85625016-9910-4133-b8e8-602125358fe5" x="0" y="0" width="181" height="24" fontName="Times New Roman" hTextAlign="Right" vTextAlign="Middle">
+                            <element kind="textField" uuid="85625016-9910-4133-b8e8-602125358fe5" x="0" y="0" width="181" height="24" fontName="Times New Roman" hTextAlign="Center" vTextAlign="Middle">
                                 <expression><![CDATA[$F{parametervalue}]]></expression>
-                                <box topPadding="0" leftPadding="4" bottomPadding="0" rightPadding="0"/>
+                                <box topPadding="0" leftPadding="4" bottomPadding="0" rightPadding="0">
+                                    <bottomPen lineWidth="0.75"/>
+                                </box>
                             </element>
-                            <box leftPadding="0" rightPadding="4" style="Table_TD"/>
+                            <box leftPadding="0" rightPadding="4" style="Table_TD">
+                                <topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                                <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                                <bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                                <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            </box>
                         </detailCell>
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
                     </column>
@@ -230,13 +250,19 @@ WHERE report = $P{reportId}]]></query>
                             <property name="com.jaspersoft.studio.unit.width" value="px"/>
                         </tableHeader>
                         <detailCell height="24" style="Table_TD">
-                            <element kind="textField" uuid="518b29b5-7344-401d-8a1f-28e55aecbac2" x="0" y="0" width="177" height="16" fontName="Times New Roman" hTextAlign="Right" vTextAlign="Middle">
+                            <element kind="textField" uuid="73f69fbd-024c-4a16-8b55-44ecee3c6d89" x="0" y="0" width="185" height="24" fontName="Times New Roman" hTextAlign="Center" vTextAlign="Middle">
                                 <expression><![CDATA[$F{referencevaluerange} == null ? "Not defined" : $F{referencevaluerange}]]></expression>
-                                <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-                                <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
                                 <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                                <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+                                    <bottomPen lineWidth="0.0"/>
+                                </box>
                             </element>
-                            <box padding="4" style="Table_TD"/>
+                            <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0" style="Table_TD">
+                                <topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                                <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                                <bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                                <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            </box>
                         </detailCell>
                         <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
                     </column>
@@ -247,8 +273,8 @@ WHERE report = $P{reportId}]]></query>
                 <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
             </element>
         </band>
-        <band height="500" splitType="Stretch">
-            <element kind="textField" uuid="da23ac93-69f1-446f-b85b-5ec0e60dedc2" stretchType="ContainerHeight" x="0" y="0" width="555" height="490" fontName="Times New Roman" textAdjust="StretchHeight" linkType="None" linkTarget="Self" printRepeatedValues="false" printWhenDetailOverflows="true" hTextAlign="Justified">
+        <band height="71" splitType="Stretch">
+            <element kind="textField" uuid="da23ac93-69f1-446f-b85b-5ec0e60dedc2" stretchType="ElementGroupHeight" x="0" y="0" width="555" height="19" fontName="Times New Roman" textAdjust="StretchHeight" linkType="None" linkTarget="Self" printInFirstWholeBand="true" printRepeatedValues="false" printWhenDetailOverflows="true" hTextAlign="Justified">
                 <expression><![CDATA[$P{promptResponse} == null || $P{promptResponse}.equals("") ? "No parameter analysis received" : $P{promptResponse}
 ]]></expression>
                 <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -258,7 +284,7 @@ WHERE report = $P{reportId}]]></query>
             <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
         </band>
     </detail>
-    <columnFooter height="7" splitType="Stretch"/>
+    <columnFooter height="5" splitType="Stretch"/>
     <pageFooter height="25" splitType="Stretch">
         <element kind="frame" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#FFFFFF">
             <element kind="textField" uuid="4834e99c-7f6c-485a-b098-50e5187f2ab4" x="513" y="0" width="40" height="20" forecolor="#030303" fontSize="10.0" evaluationTime="Report" bold="false" vTextAlign="Middle" style="Column header">
