@@ -56,6 +56,10 @@ public class PromptService {
                 return HORMONE_REPORT_PROMPT;
             case "urine":
                 return URINE_REPORT_PROMPT;
+            case "sugar":
+                return SUGAR_REPORT_PROMPT;
+            case "blood pressure":
+                return BLOOD_PRESSURE_REPORT_PROMPT;
         }
         return UNDEFINED_REPORT_PROMPT;
     }

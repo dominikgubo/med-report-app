@@ -15,10 +15,12 @@ public class OpenAiService {
 
     public String generatePromptResponse(String prompt){
         ChatRequest chatRequest = ChatRequest.builder()
+                .clearModalities()
                 .model("gpt-4o-mini")
                 .message(ChatMessage.SystemMessage.of(aiRoleMessage))
                 .message(ChatMessage.UserMessage.of(prompt))
-                .temperature(predictableTemperature).maxCompletionTokens(400)
+                .temperature(predictableTemperature)
+                .maxCompletionTokens(1000)
                 .build();
 
         return openAI.chatCompletions().create(chatRequest).join().firstContent();

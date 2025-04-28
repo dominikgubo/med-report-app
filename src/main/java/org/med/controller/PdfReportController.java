@@ -18,6 +18,8 @@ public class PdfReportController {
     @POST
     @Path("/generate")
     public void generateJaspersoftBloodReportPdf(@QueryParam("reportId") Long id) throws JRException, IOException {
+        // TODO; add query param flags which would indicate the complexity level of AI response
+        // TODO; add a query param flag for patient measurements to be included
         pdfReportService.generateReportPdf(id);
         Log.info("PDF Report has been successfully generated for reportId: " + id);
     }
