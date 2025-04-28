@@ -108,21 +108,10 @@ WHERE report = $P{reportId}]]></query>
         <property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
     </field>
     <background splitType="Stretch"/>
-    <title height="71" splitType="Stretch">
-        <element kind="frame" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a" mode="Opaque" x="0" y="0" width="555" height="40" backcolor="#030303">
+    <title height="50" splitType="Stretch">
+        <element kind="frame" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4" mode="Opaque" x="0" y="0" width="555" height="24" forecolor="#000000" backcolor="#FFFFFF">
             <property name="com.jaspersoft.studio.unit.height" value="px"/>
-            <element kind="staticText" uuid="a2a2cac8-5a7d-4487-8c54-dab235ce4e21" x="8" y="0" width="221" height="40" fontSize="33.0" bold="false" vTextAlign="Middle" style="Title">
-                <text><![CDATA[Medical report:]]></text>
-                <property name="com.jaspersoft.studio.unit.x" value="px"/>
-            </element>
-            <element kind="textField" uuid="0cb71b28-842b-43a4-9e17-fe9febab3a91" x="230" y="10" width="283" height="25" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="15.0" pattern="EEEEE dd MMMMM yyyy" hTextAlign="Left" vTextAlign="Middle">
-                <expression><![CDATA[($P{reportType}.equalsIgnoreCase("blood") || $P{reportType}.equalsIgnoreCase("hormone") || $P{reportType}.equalsIgnoreCase("urine") ? $P{reportType} : "Measured value")  + " analysis"]]></expression>
-                <property name="com.jaspersoft.studio.unit.x" value="px"/>
-            </element>
-        </element>
-        <element kind="frame" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4" mode="Opaque" x="0" y="42" width="555" height="24" forecolor="#000000" backcolor="#FFFFFF">
-            <property name="com.jaspersoft.studio.unit.height" value="px"/>
-            <element kind="textField" uuid="5c3301e7-a737-4c59-8a2f-a6c79fd1adb8" x="197" y="0" width="343" height="24" forecolor="#030303" rotation="None" fontName="Times New Roman" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" hTextAlign="Right" vTextAlign="Middle">
+            <element kind="textField" uuid="5c3301e7-a737-4c59-8a2f-a6c79fd1adb8" x="270" y="0" width="270" height="24" forecolor="#030303" rotation="None" fontName="Times New Roman" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" italic="true" hTextAlign="Right" vTextAlign="Middle">
                 <expression><![CDATA[new java.util.Date()]]></expression>
                 <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 <box>
@@ -131,6 +120,10 @@ WHERE report = $P{reportId}]]></query>
                     <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
+            </element>
+            <element kind="textField" uuid="0cb71b28-842b-43a4-9e17-fe9febab3a91" x="8" y="-1" width="262" height="25" forecolor="#030303" fontName="Times New Roman" fontSize="15.0" pattern="EEEEE dd MMMMM yyyy" italic="true" hTextAlign="Left" vTextAlign="Middle">
+                <expression><![CDATA["Medical report: " + ($P{reportType}.equalsIgnoreCase("blood") || $P{reportType}.equalsIgnoreCase("hormone") || $P{reportType}.equalsIgnoreCase("urine") ? $P{reportType} : "Measured value")  + " analysis"]]></expression>
+                <property name="com.jaspersoft.studio.unit.x" value="px"/>
             </element>
             <box>
                 <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -162,19 +155,19 @@ WHERE report = $P{reportId}]]></query>
     <detail>
         <band height="30" splitType="Stretch">
             <element kind="frame" uuid="b50221b5-8254-440b-8c6f-1f0b138c9259" mode="Opaque" x="0" y="0" width="555" height="18" style="Row">
-                <element kind="textField" uuid="f477facf-4fa3-463e-bcfa-bdbb21e89bf3" positionType="Float" x="0" y="0" width="79" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+                <element kind="textField" uuid="f477facf-4fa3-463e-bcfa-bdbb21e89bf3" positionType="Float" x="0" y="0" width="79" height="18" fontSize="12.0" textAdjust="StretchHeight" italic="true" hTextAlign="Left" style="Detail">
                     <expression><![CDATA[$F{firstname} + " "  +$F{lastname}]]></expression>
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="503dcf7e-26bb-46f8-8ef4-a1639f23d7fe"/>
                 </element>
-                <element kind="textField" uuid="06b37617-64a2-4aaf-9626-ecc1e5c8dca0" positionType="Float" x="79" y="0" width="79" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+                <element kind="textField" uuid="06b37617-64a2-4aaf-9626-ecc1e5c8dca0" positionType="Float" x="79" y="0" width="79" height="18" fontSize="12.0" textAdjust="StretchHeight" italic="true" hTextAlign="Left" style="Detail">
                     <expression><![CDATA[$F{sex}]]></expression>
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ae9a7d35-b046-41ad-94e1-a21952c31f48"/>
                 </element>
-                <element kind="textField" uuid="8c7f2b67-550e-42a6-9c69-8d0ac59b934e" positionType="Float" x="158" y="0" width="79" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+                <element kind="textField" uuid="8c7f2b67-550e-42a6-9c69-8d0ac59b934e" positionType="Float" x="158" y="0" width="79" height="18" fontSize="12.0" textAdjust="StretchHeight" italic="true" hTextAlign="Left" style="Detail">
                     <expression><![CDATA[$F{weight} == null ? "-" : $F{weight}]]></expression>
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11d10171-2870-4b72-8e8a-62026c57e174"/>
                 </element>
-                <element kind="textField" uuid="ce296e11-2fae-4ae8-a9a9-2f5d19c4bacf" positionType="Float" x="240" y="0" width="79" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+                <element kind="textField" uuid="ce296e11-2fae-4ae8-a9a9-2f5d19c4bacf" positionType="Float" x="240" y="0" width="79" height="18" fontSize="12.0" textAdjust="StretchHeight" italic="true" hTextAlign="Left" style="Detail">
                     <expression><![CDATA[$F{bloodtype}]]></expression>
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c285b1b-6792-4739-9396-dfc5d54cf175"/>
                 </element>
@@ -255,7 +248,7 @@ WHERE report = $P{reportId}]]></query>
             </element>
         </band>
         <band height="500" splitType="Stretch">
-            <element kind="textField" uuid="da23ac93-69f1-446f-b85b-5ec0e60dedc2" stretchType="ContainerHeight" x="0" y="0" width="555" height="490" fontName="Times New Roman" linkType="None" linkTarget="Self" printWhenDetailOverflows="true" printInFirstWholeBand="true" printRepeatedValues="false">
+            <element kind="textField" uuid="da23ac93-69f1-446f-b85b-5ec0e60dedc2" stretchType="ContainerHeight" x="0" y="0" width="555" height="490" fontName="Times New Roman" textAdjust="StretchHeight" linkType="None" linkTarget="Self" printRepeatedValues="false" printWhenDetailOverflows="true" hTextAlign="Justified">
                 <expression><![CDATA[$P{promptResponse} == null || $P{promptResponse}.equals("") ? "No parameter analysis received" : $P{promptResponse}
 ]]></expression>
                 <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -274,7 +267,7 @@ WHERE report = $P{reportId}]]></query>
             <element kind="textField" uuid="9825b46e-76f1-469a-abb8-a1cc27aad685" x="433" y="0" width="80" height="20" forecolor="#030303" fontSize="10.0" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Column header">
                 <expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
             </element>
-            <element kind="textField" uuid="137d38c7-1a83-4fc5-b156-9d5f1b1a0ddc" x="8" y="1" width="235" height="20" forecolor="#030303" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" vTextAlign="Middle" style="Column header">
+            <element kind="textField" uuid="137d38c7-1a83-4fc5-b156-9d5f1b1a0ddc" x="8" y="1" width="235" height="20" forecolor="#030303" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" italic="true" vTextAlign="Middle" style="Column header">
                 <expression><![CDATA[new java.util.Date()]]></expression>
             </element>
             <box>
