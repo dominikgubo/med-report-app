@@ -3,7 +3,7 @@ package org.med.service;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import org.med.entity.MedicalParameterEntity;
+import org.med.model.entity.MedicalParameterEntity;
 import org.med.repository.MedicalParameterRepository;
 
 import java.util.List;

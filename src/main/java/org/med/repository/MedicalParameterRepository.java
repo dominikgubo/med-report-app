@@ -3,7 +3,7 @@ package org.med.repository;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
-import org.med.entity.MedicalParameterEntity;
+import org.med.model.entity.MedicalParameterEntity;
 
 @ApplicationScoped
 @Transactional

@@ -87,6 +87,14 @@
             <artifactId>simple-openai</artifactId>
             <version>[3.19.0,)</version>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-mailer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-jackson</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

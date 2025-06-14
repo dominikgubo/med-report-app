@@ -2,7 +2,7 @@ package org.med.repository;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
-import org.med.entity.ReportEntity;
+import org.med.model.entity.ReportEntity;
 
 import java.util.List;
 
