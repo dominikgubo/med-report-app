@@ -1,4 +1,4 @@
-package org.med.entity;
+package org.med.model.entity;
 
 import io.smallrye.common.constraint.NotNull;
 import jakarta.persistence.*;
@@ -24,10 +24,10 @@ public class PatientEntity {
     private String lastName;
     @ValidBloodType
     private String bloodType;
+    private String email;
     @NotNull
     private Character sex;
     @NotNull
     private Integer age;
-
     private Float weight;
 }

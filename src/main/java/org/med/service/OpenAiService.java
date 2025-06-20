@@ -20,6 +20,7 @@ public class OpenAiService {
                 .message(ChatMessage.SystemMessage.of(aiRoleMessage))
                 .message(ChatMessage.UserMessage.of(prompt))
                 .temperature(predictableTemperature)
+                .stream(true)
                 .maxCompletionTokens(1000)
                 .build();
 

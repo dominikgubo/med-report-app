@@ -1,17 +1,15 @@
 package org.med.service;
 
-import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import org.med.entity.MedicalParameterEntity;
-import org.med.entity.PromptEntity;
-import org.med.entity.ReportEntity;
+import org.med.model.entity.MedicalParameterEntity;
+import org.med.model.entity.PromptEntity;
+import org.med.model.entity.ReportEntity;
 import org.med.repository.PromptRepository;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import static org.med.constants.PromptConstants.*;
 

@@ -3,7 +3,7 @@ package org.med.service;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import org.med.entity.PatientEntity;
+import org.med.model.entity.PatientEntity;
 import org.med.repository.PatientRepository;
 
 import java.util.List;

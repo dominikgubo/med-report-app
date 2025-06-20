@@ -4,7 +4,7 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.QueryParam;
-import org.med.entity.PromptEntity;
+import org.med.model.entity.PromptEntity;
 import org.med.service.OpenAiService;
 import org.med.service.PromptService;
 

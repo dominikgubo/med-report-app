@@ -8,7 +8,7 @@ import jdk.jfr.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.med.entity.PatientEntity;
+import org.med.model.entity.PatientEntity;
 import org.med.service.PatientService;
 import org.med.utils.DBCleanUtil;
 import org.med.utils.DBTestContainerSetup;
