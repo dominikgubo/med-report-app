@@ -2,7 +2,7 @@
 
 Application used for generating PDF medical reports using Quarkus, Jasper and OpenAI API.
 
-_Example of generated medical report:_
+_Example of generated medical report_
 <img width="667" height="854" alt="image" src="https://github.com/user-attachments/assets/9b0d03fe-9418-4869-aa6e-b4538bf78156" />
 
 ## Functionality
