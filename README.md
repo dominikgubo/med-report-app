@@ -1,8 +1,21 @@
 # MedicalApp
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Application used for generating PDF medical reports using Quarkus, Jasper and OpenAI API.
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+_Example of generated medical report:_
+<img width="667" height="854" alt="image" src="https://github.com/user-attachments/assets/9b0d03fe-9418-4869-aa6e-b4538bf78156" />
+
+## Functionality
+
+This is _wip_ , all current functionality has been described in the PRs
+
+## Requirements and modularity
+
+OpenAI API key is used for AI layer, if you want to use it by default key is mandatory. This functionality can be easily swapped by pointing to the other LLM or AI service as it was designed to not be tightly coupled. 
+If different AI service is used refactor the code around the OpenAiService.class. 
+
+Regarding the Jasper PDF generation could also be switched by providing another .jrxml template, slight re-mapping on the BE side might be needed. 
+
 
 ## Running the application in dev mode
 
@@ -21,9 +34,6 @@ The application can be packaged using:
 ```shell script
 ./mvnw package
 ```
-
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
 
 The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
 
